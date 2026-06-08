@@ -782,7 +782,7 @@ def main():
             # Load previously generated pairs
             prev_path = PROCESSED_DIR / "qa_pairs_all.json"
             if prev_path.exists():
-                with open(prev_path) as f:
+                with open(prev_path, encoding="utf-8") as f:
                     prev_pairs = json.load(f)
                 all_pairs.extend(generate_type6(prev_pairs))
             else:
